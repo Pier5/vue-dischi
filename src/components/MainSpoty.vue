@@ -1,5 +1,5 @@
 <template>
-  <main class="bg-dark">
+  <main>
     <div class="container">
       <div v-if="arrCovers == null" clasS="text-center text-white p-5">
         <LoadingPage />
@@ -51,7 +51,4 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  main {
-    height: 90vh;
-  }
 </style>
