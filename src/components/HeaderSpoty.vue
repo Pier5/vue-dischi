@@ -1,5 +1,7 @@
 <template>
-  <div>ciao</div>
+  <header class="bg-secondary d-flex align-items-center">
+    <img class="h-75 ms-2" src="../assets/img/logo-small.svg"  alt="">
+  </header>
 </template>
 
 <script>
@@ -9,5 +11,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+  header {
+    height: 10vh;
+  }
 </style>
