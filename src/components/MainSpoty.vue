@@ -38,6 +38,13 @@ export default {
         .then((response) => {
           this.arrCovers = response.data.response
         })
+        .catch(() => {
+          const error = document.createElement('div')
+          error.style.color = 'white'
+          const container = document.querySelector('.container')
+          error.innerHTML = 'File non trovato, prova a ricaricare la pagina..'
+          container.append(error)
+        })
     }, 2000)
   }
 }
