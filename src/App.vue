@@ -9,6 +9,7 @@
 
 import HeaderSpoty from './components/HeaderSpoty.vue'
 import MainSpoty from './components/MainSpoty.vue'
+
 export default {
   name: 'App',
   components: {
