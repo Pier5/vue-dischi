@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <HeaderSpoty />
-    <MainSpoty />
+    <HeaderSpoty @selectGenre="setStrSelect" />
+    <MainSpoty :str-select="strSelect" />
   </div>
 </template>
 
@@ -15,6 +15,16 @@ export default {
   components: {
     HeaderSpoty,
     MainSpoty
+  },
+  data () {
+    return {
+      strSelect: ''
+    }
+  },
+  methods: {
+    setStrSelect (selectElement) {
+      this.strSelect = selectElement
+    }
   }
 }
 </script>

@@ -6,7 +6,7 @@
       </div>
       <div v-else class="row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 d-flex align-items-stretch flex-wrap">
         <CoverCards
-          v-for="card in arrCovers"
+          v-for="card in selectGenre()"
           :key="card.title"
           :character-data="card"
         />
@@ -27,6 +27,17 @@ export default {
     return {
       arrCovers: null
     }
+  },
+  methods: {
+    selectGenre () {
+      return this.arrCovers.filter((el) => {
+        return el.genre.toLowerCase()
+          .includes(this.StrSelect.toLowerCase())
+      })
+    }
+  },
+  props: {
+    StrSelect: String
   },
   components: {
     CoverCards,
