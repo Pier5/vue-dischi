@@ -1,6 +1,6 @@
 <template>
-  <select class="ms-auto p-1 me-2" name="search-genre" id="search-genre" v-model="strSelect" @change="$emit('select', strSelect)">
-    <option value="">All</option>
+  <select class="ms-auto p-1 me-4" name="search-genre" id="search-genre" v-model="strSelect" @change="$emit('select', strSelect)">
+    <option value="">Seleziona un Genere</option>
     <option value="rock">Rock</option>
     <option value="pop">Pop</option>
     <option value="jazz">Jazz</option>

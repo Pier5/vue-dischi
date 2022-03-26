@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <HeaderSpoty @selectGenre="setStrSelect" />
-    <MainSpoty :str-select="strSelect" />
+    <HeaderSpoty @selectGenre="setStrSelect" @selectAuthor="setStrAuthorSelect" />
+    <MainSpoty :str-select="strSelect" :str-author-select="strAuthorSelect" />
   </div>
 </template>
 
@@ -18,12 +18,16 @@ export default {
   },
   data () {
     return {
-      strSelect: ''
+      strSelect: '',
+      strAuthorSelect: ''
     }
   },
   methods: {
     setStrSelect (selectElement) {
       this.strSelect = selectElement
+    },
+    setStrAuthorSelect (selectAuthorElement) {
+      this.strAuthorSelect = selectAuthorElement
     }
   }
 }
