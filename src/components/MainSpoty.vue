@@ -4,7 +4,10 @@
       <div v-if="arrCovers == null" clasS="text-center text-white p-5">
         <LoadingPage />
       </div>
-      <div v-else class="row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 d-flex align-items-stretch flex-wrap">
+      <div v-else-if="selectOption == ''" class="pt-5">
+        <span class="text-white text-uppercase">Nessun risultato trovato..</span>
+      </div>
+      <div v-else class="row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 d-flex align-items-stretch flex-wrap">
         <CoverCards
           v-for="card in selectOption"
           :key="card.title"
@@ -55,9 +58,9 @@ export default {
     selectOption () {
       return this.arrCovers.filter((el) => {
         return el.genre.toLowerCase()
-          .includes(this.StrSelect) &&
+          .includes(this.StrSelect.toLowerCase()) &&
             el.author.toLowerCase()
-              .includes(this.strAuthorSelect)
+              .includes(this.strAuthorSelect.toLowerCase())
       })
     }
   }
