@@ -1,7 +1,7 @@
 <template>
   <main>
     <div class="container">
-      <div v-if="arrCovers == null" clasS="text-center text-white p-5">
+      <div v-if="arrCovers == null" class="text-center text-white p-5">
         <LoadingPage />
       </div>
       <div v-else-if="selectOption == ''" class="pt-5">
@@ -57,10 +57,10 @@ export default {
   computed: {
     selectOption () {
       return this.arrCovers.filter((el) => {
-        return el.genre.toLowerCase()
-          .includes(this.StrSelect.toLowerCase()) &&
-            el.author.toLowerCase()
-              .includes(this.strAuthorSelect.toLowerCase())
+        return el.genre
+          .includes(this.StrSelect) &&
+            el.author
+              .includes(this.strAuthorSelect)
       })
     }
   }
